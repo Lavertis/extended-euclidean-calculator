@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+    background-color: powderblue;
+}
+
+label {
+    font-size: 30px;
+}
+
+input {
+    font-size: 30px;
+    width: 140px;
+    text-align: center;
+}
+
+button {
+    font-size: 30px;
+}
