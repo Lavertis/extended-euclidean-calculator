@@ -5,8 +5,11 @@ function calculate_gcd() {
 
     if ((m % 1 !== 0) || (n % 1 !== 0)) return;
     if (m === Infinity || m === -Infinity || n === Infinity || n === -Infinity) return;
-    if (m < 1 || n < 1)
-        return document.getElementById("result_gcd").innerText = "Liczby muszą być większe od 0";
+    if (m < 1 || n < 1) {
+        document.getElementById("result_gcd").innerText = "Liczby muszą być większe od 0";
+        document.getElementById("table").innerHTML = "";
+        return;
+    }
 
     let d = m;
     let d_prime = n;
