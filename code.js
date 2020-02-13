@@ -19,8 +19,9 @@ function calculate_gcd() {
     let t_prime_temp;
     let q;
 
-    table += "<table><tr><th><span>d</span></th><th><span>d'</span></th><th><span>s</span></th><th><span>s'</span>" +
-        "</th><th><span>t</span></th><th><span>t'</span></th><th><span>q</span></th></tr>";
+    table += "<table><tr><th><span class='bold'>d</span></th><th><span class='bold'>d'</span></th><th>" +
+        "<span class='bold'>s</span></th><th><span class='bold'>s'</span>" + "</th><th><span class='bold'>t</span>" +
+        "</th><th><span class='bold'>t'</span></th><th><span class='bold'>q</span></th></tr>";
     while (d_prime !== 0) {
         table += "<tr><td>" + d + "</td><td>" + d_prime + "</td>";
         q = Math.floor(d / d_prime);

@@ -35,7 +35,6 @@ tr, td {
     background-color: #ce93d8;
     width: 120px;
     height: 50px;
-
 }
 
 th {
@@ -46,6 +45,10 @@ th {
     border-width: 2px;
 }
 
-span {
+.bold {
     font-weight: bold;
+}
+
+.notbold {
+    font-weight: normal;
 }
