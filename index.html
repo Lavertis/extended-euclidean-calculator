@@ -7,12 +7,29 @@
         <title>Kalkulator rozszerzonego NWD</title>
     </head>
     <body>
-        <p style="font-size:30px">Podaj 2 liczby, których NWD chcesz obliczyć i kliknij <strong>Oblicz</strong></p>
-        <p><label id="tip">NWD(a, b) = a × s + b × t</label></p>
-        <p><label>a = </label><input class="form-control" id="number_1" type="text"/></p>
-        <p><label>b = </label><input class="form-control" id="number_2" type="text"/></p>
+        <p style="font-size:30px">
+            Podaj 2 liczby, których NWD chcesz obliczyć i kliknij <strong>Oblicz</strong>
+        </p>
+        <p>
+            <label id="tip">NWD(a, b) = a × s + b × t</label>
+        </p>
+        <p>
+            <label>a = </label>
+            <label for="number_1">
+                <input class="form-control" id="number_1" type="text"/>
+            </label>
+        </p>
+        <p>
+            <label>b = </label>
+            <label for="number_2">
+                <input class="form-control" id="number_2" type="text"/>
+            </label>
+        </p>
         <button onclick="calculate_gcd()">Oblicz</button>
-        <p><label id="result_nwd"></label></p>
-        <p><label id="result_s"></label> <label id="result_t"></label></p>
+        <p>
+            <label id="result_gcd"></label>
+        </p>
+
+            <div id="table"></div>
     </body>
 </html>

@@ -1,38 +1,47 @@
 function calculate_gcd() {
-    let a = parseInt(document.getElementById("number_1").value, 10);
-    let b = parseInt(document.getElementById("number_2").value, 10);
+    const m = parseInt(document.getElementById("number_1").value, 10);
+    const n = parseInt(document.getElementById("number_2").value, 10);
+    let table = "";
 
-    if (a === 0 && b === 0) return;
-    if (a !== a || b !== b) return;
-    if (a === Infinity || a === -Infinity || b === Infinity || b === -Infinity) return;
-    if ((a % 1 !== 0) || (b % 1 !== 0)) return;
+    if ((m % 1 !== 0) || (n % 1 !== 0)) return;
+    if (m === Infinity || m === -Infinity || n === Infinity || n === -Infinity) return;
+    if (m < 1 || n < 1)
+        return document.getElementById("result_gcd").innerText = "Liczby muszą być większe od 0";
 
-    const a1 = a;
-    const b1 = b;
-    const signX = (a < 0) ? -1 : 1;
-    const signY = (b < 0) ? -1 : 1;
-    let x = 0;
-    let y = 1;
-    let u = 1;
-    let v = 0;
-    let q, r, m, n;
-    a = Math.abs(a);
-    b = Math.abs(b);
+    let d = m;
+    let d_prime = n;
+    let d_prime_temp;
+    let s = 1;
+    let s_prime = 0;
+    let s_prime_temp;
+    let t = 0;
+    let t_prime = 1;
+    let t_prime_temp;
+    let q;
 
-    while (a !== 0) {
-        q = Math.floor(b / a);
-        r = b % a;
-        m = x - u * q;
-        n = y - v * q;
-        b = a;
-        a = r;
-        x = u;
-        y = v;
-        u = m;
-        v = n;
+    table += "<table><tr><th><span>d</span></th><th><span>d'</span></th><th><span>s</span></th><th><span>s'</span>" +
+        "</th><th><span>t</span></th><th><span>t'</span></th><th><span>q</span></th></tr>";
+    while (d_prime !== 0) {
+        table += "<tr><td>" + d + "</td><td>" + d_prime + "</td>";
+        q = Math.floor(d / d_prime);
+        d_prime_temp = d_prime;
+        d_prime = d - q * d_prime;
+        d = d_prime_temp;
+        table += "<td>" + s + "</td><td>" + s_prime + "</td>";
+        s_prime_temp = s_prime;
+        s_prime = s - s_prime * q;
+        s = s_prime_temp;
+        table += "<td>" + t + "</td><td>" + t_prime + "</td>";
+        t_prime_temp = t_prime;
+        t_prime = t - t_prime * q;
+        t = t_prime_temp;
+        table += "<td>" + q + "</td></tr>";
     }
+    table += "<tr><td>" + d + "</td>" + "<td>" + 0 + "</td>" + "<td>" + s + "</td>" + "<td></td>" + "<td>" + t +
+        "</td><td></td><td></td></tr></table>";
 
-    document.getElementById("result_nwd").innerText = "NWD = " + a1 + " × " + signX * x + " + " + b1 + " × " + signY * y + " = " + b;
-    document.getElementById("result_s").innerText = "s: " + signX * x;
-    document.getElementById("result_t").innerText = "t: " + signY * y;
+    document.getElementById("result_gcd").innerText =
+        "NWD = " + m + " × (" + s + ") + " + n + " × (" + t + ") = " + d;
+    document.getElementById("table").innerHTML = "";
+    document.getElementById("table").innerHTML = table;
 }
