@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: #e1bee7;
+    background-color: #FFE0B2;
     margin-top: 80px;
 }
 
@@ -16,14 +16,15 @@ input {
     font-size: 30px;
     width: 200px;
     text-align: center;
-    background-color: #ce93d8;
+    background-color: #FFCC80;
     margin-right: 45px;
 }
 
 button {
-    font-size: 30px;
+    color: white;
+    font-size: 32px;
     text-align: center;
-    background-color: #ce93d8;
+    background-color: #E65100;
     margin-bottom: 20px;
 }
 
@@ -40,14 +41,14 @@ table {
 tr, td {
     border-style: solid;
     border-width: 1px;
-    background-color: #ce93d8;
+    background-color: #FFB74D;
     width: 120px;
     height: 50px;
 }
 
 th {
     color: white;
-    background-color: #9c27b0;
+    background-color: #E65100;
     border-style: solid;
     border-color: gray;
     border-width: 2px;
