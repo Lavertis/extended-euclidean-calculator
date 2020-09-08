@@ -1,33 +1,38 @@
 function calculateGCD() {
-    const m = parseInt(document.getElementById("number-1").value, 10)
-    const n = parseInt(document.getElementById("number-2").value, 10)
+    document.getElementById("table").innerHTML = ""
+    let m = document.getElementById("number-1").value
+    let n = document.getElementById("number-2").value
+
     if (!inputIsCorrect(m, n))
         return
 
     let table = ""
     table += openTable()
-    let resultArray = fillTable(m, n)
+    const mToInt = parseInt(m, 10)
+    const nToInt = parseInt(n, 10)
+    let resultArray = fillTable(mToInt, nToInt)
     table += resultArray[0]
     const s = resultArray[1]
     const t = resultArray[2]
     const d = resultArray[3]
     table += closeTable(d, s, t)
 
-    document.getElementById("result-gcd").innerText = "NWD = " + m + " × (" + s + ") + " + n + " × (" + t + ") = " + d
-    document.getElementById("table").innerHTML = ""
+    document.getElementById("result-gcd").innerHTML =
+        "NWD = " + m + " × <strong>" + s + "</strong> + " + n + " × <strong>" + t + "</strong> = " + d
     document.getElementById("table").innerHTML = table
 }
 
 function inputIsCorrect(m, n) {
-    let x = 1
-    if (m % 1 !== 0 || n % 1 !== 0 || m === Infinity || m === -Infinity || n === Infinity || n === -Infinity) {
+    let x = 0
+    const reg = /^[-]?\d+$/;
+
+    if (!(reg.test(m) && reg.test(n)))
         document.getElementById("result-gcd").innerText = "Niepoprawne dane"
-        x = 0
-    } else if (m < 1 || n < 1) {
+    else if (m < 1 || n < 1)
         document.getElementById("result-gcd").innerText = "Liczby muszą być większe od 0"
-        x = 0
-    }
-    document.getElementById("table").innerHTML = ""
+    else
+        x = 1
+
     return Boolean(x)
 }
 
