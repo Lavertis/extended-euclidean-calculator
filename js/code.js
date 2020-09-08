@@ -18,7 +18,7 @@ function calculateGCD() {
     table += closeTable(d, s, t)
 
     document.getElementById("result-gcd").innerHTML =
-        "NWD = " + m + " × <strong>" + s + "</strong> + " + n + " × <strong>" + t + "</strong> = " + d
+        "GCD = " + m + " × <strong>" + s + "</strong> + " + n + " × <strong>" + t + "</strong> = " + d
     document.getElementById("table").innerHTML = table
 }
 
@@ -27,9 +27,9 @@ function inputIsCorrect(m, n) {
     const reg = /^[-]?\d+$/;
 
     if (!(reg.test(m) && reg.test(n)))
-        document.getElementById("result-gcd").innerText = "Niepoprawne dane"
+        document.getElementById("result-gcd").innerText = "Incorrect data"
     else if (m < 1 || n < 1)
-        document.getElementById("result-gcd").innerText = "Liczby muszą być większe od 0"
+        document.getElementById("result-gcd").innerText = "Numbers must be greater than 0"
     else
         x = 1
 

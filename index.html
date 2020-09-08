@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Kalkulator rozszerzonego NWD</title>
+    <title>Extended GCD calculator</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <h1><span class="not-bold">Podaj 2 liczby, których NWD chcesz obliczyć i kliknij <strong>Oblicz</strong></span></h1>
+        <h1><span class="not-bold">Enter the 2 numbers of which the GCD you want to calculate</span></h1>
     </header>
 
     <p><label for="number-1">
@@ -22,8 +22,8 @@
             <input id="number-2" maxlength="10" type="text"/>
         </label></p>
 
-    <p><button onclick="calculateGCD()">Oblicz</button></p>
-    <p><label id="tip">NWD(a, b) = a × <strong>s</strong> + b × <strong>t</strong></label></p>
+    <button onclick="calculateGCD()">calculate</button>
+    <p><label id="tip">GCD(a, b) = a × <strong>s</strong> + b × <strong>t</strong></label></p>
     <p><label id="result-gcd"></label></p>
     <div id="table"></div>
 </body>
