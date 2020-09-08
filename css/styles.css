@@ -94,8 +94,8 @@ tbody tr:last-of-type td:last-of-type {
     background-color: #2196f3;
     box-shadow: 0 0 4px #999;
     outline: none;
-    margin-top: 1%;
-    margin-bottom: 2%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .btn.blue {
