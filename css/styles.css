@@ -84,14 +84,6 @@ tbody tr:last-of-type td:last-of-type {
     border-radius: 0 0 5px 0;
 }
 
-.bold {
-    font-weight: bold;
-}
-
-.not-bold {
-    font-weight: normal;
-}
-
 .btn {
     border: none;
     border-radius: 5px;
