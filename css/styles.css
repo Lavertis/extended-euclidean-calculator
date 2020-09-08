@@ -1,3 +1,7 @@
+html * {
+    font-family: 'Lato', sans-serif;
+}
+
 body {
     text-align: center;
     background-color: #FFE0B2;
