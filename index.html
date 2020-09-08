@@ -14,16 +14,16 @@
         <h1><span class="not-bold">Enter the 2 numbers of which the GCD you want to calculate</span></h1>
     </header>
 
-    <p><label for="number-1">
-            <input id="number-1" maxlength="10" type="text"/>
-        </label></p>
+    <label for="number-1">
+        <input id="number-1" maxlength="10" type="text"/>
+    </label>
 
-    <p><label for="number-2">
-            <input id="number-2" maxlength="10" type="text"/>
-        </label></p>
+    <label for="number-2">
+        <input id="number-2" maxlength="10" type="text"/>
+    </label>
 
-    <button onclick="calculateGCD()">calculate</button>
-    <p><label id="tip">GCD(a, b) = a × <strong>s</strong> + b × <strong>t</strong></label></p>
+    <button class="btn blue ripple" onclick="calculateGCD()">calculate</button>
+    <label id="tip">GCD(a, b) = a × <strong>s</strong> + b × <strong>t</strong></label>
     <p><label id="result-gcd"></label></p>
     <div id="table"></div>
 </body>

@@ -3,13 +3,13 @@ html * {
 }
 
 body {
-    text-align: center;
-    background-color: #FFE0B2;
-    margin-top: 80px;
-}
-
-header {
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    background-color: #ebf1ff;
+    color: #34495e;
 }
 
 label {
@@ -18,44 +18,61 @@ label {
 
 input {
     font-size: 30px;
-    width: 200px;
+    width: auto;
     text-align: center;
-    background-color: #FFCC80;
-    margin-right: 45px;
-}
+    color: #34495e;
+    background-color: #d0e7f8;
 
-button {
-    color: white;
-    font-size: 32px;
-    text-align: center;
-    background-color: #E65100;
-    margin-bottom: 20px;
+    display: block;
+    margin: 2% auto;
+    padding: 10px;
+
+    overflow: hidden;
+
+    border-width: 0;
+    outline: none;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .7);
 }
 
 table {
     border-collapse: collapse;
+    border-radius: 10px;
+    text-align: center;
     font-size: 30px;
     margin-left: auto;
     margin-right: auto;
-    border-style: solid;
-    border-width: 2px;
     margin-top: 30px;
+    box-shadow: 0 2px 15px 3px rgba(0, 0, 0, .7);
 }
 
 tr, td {
-    border-style: solid;
-    border-width: 1px;
-    background-color: #FFB74D;
+    padding: 6px;
+    background-color: #d0e7f8;
     width: 120px;
     height: 50px;
 }
 
 th {
     color: white;
-    background-color: #E65100;
-    border-style: solid;
-    border-color: gray;
-    border-width: 2px;
+    font-size: 26px;
+    background-color: #007dff;
+}
+
+th:first-of-type {
+    border-radius: 5px 0 0 0;
+}
+
+th:last-of-type {
+    border-radius: 0 5px 0 0;
+}
+
+tbody tr:last-of-type td:first-of-type {
+    border-radius: 0 0 0 5px;
+}
+
+tbody tr:last-of-type td:last-of-type {
+    border-radius: 0 0 5px 0;
 }
 
 .bold {
@@ -64,4 +81,41 @@ th {
 
 .not-bold {
     font-weight: normal;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+    background-color: #2196f3;
+    box-shadow: 0 0 4px #999;
+    outline: none;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.btn.blue {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    background-color: #007dff;
+}
+
+.btn.blue:hover {
+    background-color: #005dc3;
+}
+
+.ripple {
+    transition: background 0.5s;
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+
+.ripple:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
 }
