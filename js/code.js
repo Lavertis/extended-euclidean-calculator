@@ -18,7 +18,7 @@ function calculateGCD() {
     table += closeTable(d, s, t)
 
     document.getElementById("result-gcd").innerHTML =
-        "GCD = " + m + " × <strong>" + s + "</strong> + " + n + " × <strong>" + t + "</strong> = " + d
+        "GCD(" + m + ", " + n + ") = " + m + " × <strong>" + s + "</strong> + " + n + " × <strong>" + t + "</strong> = " + d
     document.getElementById("table").innerHTML = table
 }
 
