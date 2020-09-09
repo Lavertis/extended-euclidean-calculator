@@ -1,36 +1,6 @@
-class InputValidator {
-    constructor(valid = true, errorMessage = "") {
-        this.valid = valid
-        this.errorMessage = errorMessage
-    }
-
-    isCorrect(m, n) {
-        const reg = /^[-]?\d+$/;
-
-        if (!(reg.test(m) && reg.test(n))) {
-            this.valid = false
-            this.errorMessage = "Incorrect data"
-        } else if (m < 1 || n < 1) {
-            this.valid = false
-            this.errorMessage = "Numbers must be greater than 0"
-        } else {
-            this.valid = true
-            this.errorMessage = ""
-        }
-    }
-}
-
 function getGCDTable(m, n) {
-    let inputValidator = new InputValidator()
-    inputValidator.isCorrect(m, n)
-
-    if (!inputValidator.valid) {
-        return inputValidator
-    }
-
     const mToInt = parseInt(m, 10)
     const nToInt = parseInt(n, 10)
-
     return calculateTable(mToInt, nToInt)
 }
 

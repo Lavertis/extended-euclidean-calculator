@@ -3,15 +3,30 @@ function buttonClick() {
     let m = document.getElementById("number-1").value
     let n = document.getElementById("number-2").value
 
+    let inputIsCorrect = validateUserInput(m, n)
+    if (!inputIsCorrect)
+        return
+
     let resultArray = getGCDTable(m, n)
     const final_s = resultArray[resultArray.length - 1].s
     const final_t = resultArray[resultArray.length - 1].t
     const final_d = resultArray[resultArray.length - 1].d
-    // if (typeof(result) === "object")
-    //     showErrorMessage(result.errorMessage)
-    // else
+
     displayTable(resultArray, final_d, final_s, final_t)
     displayEquation(m, n, final_s, final_t, final_d)
+}
+
+function validateUserInput(m, n) {
+    const reg = /^[-]?\d+$/;
+
+    if (!(reg.test(m) && reg.test(n))) {
+        showErrorMessage("Incorrect data")
+        return false
+    } else if (m < 1 || n < 1) {
+        showErrorMessage("Numbers must be greater than 0")
+        return false
+    } else
+        return true
 }
 
 function showErrorMessage(msg) {
@@ -28,20 +43,17 @@ function displayTable(resultArray, d, s, t) {
     table += openTable()
     table += fillTable(resultArray)
     table += closeTable(d, s, t)
-
     document.getElementById("table").innerHTML = table
 }
 
 function fillTable(tableArray) {
     let table = ""
-
-    for (let i = 0; i < tableArray.length-1; i++) {
+    for (let i = 0; i < tableArray.length - 1; i++) {
         table += "<tr><td>" + tableArray[i].d + "</td><td>" + tableArray[i].d_prime + "</td>"
         table += "<td>" + tableArray[i].s + "</td><td>" + tableArray[i].s_prime + "</td>"
         table += "<td>" + tableArray[i].t + "</td><td>" + tableArray[i].t_prime + "</td>"
         table += "<td>" + tableArray[i].q + "</td></tr>"
     }
-
     return table
 }
 
