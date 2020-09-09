@@ -20,7 +20,7 @@ class InputValidator {
     }
 }
 
-function calculateGCD(m, n) {
+function getGCDTable(m, n) {
     let inputValidator = new InputValidator()
     inputValidator.isCorrect(m, n)
 
@@ -30,9 +30,8 @@ function calculateGCD(m, n) {
 
     const mToInt = parseInt(m, 10)
     const nToInt = parseInt(n, 10)
-    let resultArray = calculateTable(mToInt, nToInt)
-    displayTable(resultArray, m, n)
-    return new InputValidator(true)
+
+    return calculateTable(mToInt, nToInt)
 }
 
 class TableRow {
@@ -49,15 +48,19 @@ class TableRow {
 
 function calculateTable(m, n) {
     let tableArray = []
+
     let d = m
     let d_prime = n
     let d_prime_temp
+
     let s = 1
     let s_prime = 0
     let s_prime_temp
+
     let t = 0
     let t_prime = 1
     let t_prime_temp
+
     let q = Math.floor(d / d_prime)
 
     while (d_prime !== 0) {
@@ -77,8 +80,9 @@ function calculateTable(m, n) {
 
         q = Math.floor(d / d_prime)
     }
+    addCurrentRowToArray(tableArray, d, d_prime, s, s_prime, t, t_prime, null)
 
-    return [fillTable(tableArray), s, t, d]
+    return tableArray
 }
 
 function addCurrentRowToArray(tableArray, d, d_prime, s, s_prime, t, t_prime, q) {

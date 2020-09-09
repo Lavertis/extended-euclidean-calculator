@@ -2,9 +2,16 @@ function buttonClick() {
     document.getElementById("table").innerHTML = ""
     let m = document.getElementById("number-1").value
     let n = document.getElementById("number-2").value
-    let input = calculateGCD(m, n)
-    if (!input.valid)
-        showErrorMessage(input.errorMessage)
+
+    let resultArray = getGCDTable(m, n)
+    const final_s = resultArray[resultArray.length - 1].s
+    const final_t = resultArray[resultArray.length - 1].t
+    const final_d = resultArray[resultArray.length - 1].d
+    // if (typeof(result) === "object")
+    //     showErrorMessage(result.errorMessage)
+    // else
+    displayTable(resultArray, final_d, final_s, final_t)
+    displayEquation(m, n, final_s, final_t, final_d)
 }
 
 function showErrorMessage(msg) {
@@ -16,23 +23,19 @@ function displayEquation(m, n, s, t, d) {
         "GCD(" + m + ", " + n + ") = " + m + " × <strong>" + s + "</strong> + " + n + " × <strong>" + t + "</strong> = " + d
 }
 
-function displayTable(resultArray, m, n) {
+function displayTable(resultArray, d, s, t) {
     let table = ""
     table += openTable()
-    table += resultArray[0]
-    const s = resultArray[1]
-    const t = resultArray[2]
-    const d = resultArray[3]
+    table += fillTable(resultArray)
     table += closeTable(d, s, t)
 
-    displayEquation(m, n, s, t, d)
     document.getElementById("table").innerHTML = table
 }
 
 function fillTable(tableArray) {
     let table = ""
 
-    for (let i = 0; i < tableArray.length; i++) {
+    for (let i = 0; i < tableArray.length-1; i++) {
         table += "<tr><td>" + tableArray[i].d + "</td><td>" + tableArray[i].d_prime + "</td>"
         table += "<td>" + tableArray[i].s + "</td><td>" + tableArray[i].s_prime + "</td>"
         table += "<td>" + tableArray[i].t + "</td><td>" + tableArray[i].t_prime + "</td>"
