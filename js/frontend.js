@@ -64,6 +64,6 @@ function openTable() {
 }
 
 function closeTable(d, s, t) {
-    return "<tr><td>" + d + "</td>" + "<td>" + 0 + "</td>" + "<td><strong>" + s +
+    return "<tr><td><strong>" + d + "</strong></td>" + "<td>" + 0 + "</td>" + "<td><strong>" + s +
         "</strong></td>" + "<td></td>" + "<td><strong>" + t + "</strong></td><td></td><td></td></tr></table>"
 }
