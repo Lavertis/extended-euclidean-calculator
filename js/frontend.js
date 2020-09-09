@@ -16,7 +16,7 @@ function displayEquation(m, n, s, t, d) {
         "GCD(" + m + ", " + n + ") = " + m + " × <strong>" + s + "</strong> + " + n + " × <strong>" + t + "</strong> = " + d
 }
 
-function createTable(resultArray, m, n) {
+function displayTable(resultArray, m, n) {
     let table = ""
     table += openTable()
     table += resultArray[0]
@@ -32,11 +32,11 @@ function createTable(resultArray, m, n) {
 function fillTable(tableArray) {
     let table = ""
 
-    for (let i = 0; i < tableArray.d_prime.length; i++) {
-        table += "<tr><td>" + tableArray.d[i] + "</td><td>" + tableArray.d_prime[i] + "</td>"
-        table += "<td>" + tableArray.s[i] + "</td><td>" + tableArray.s_prime[i] + "</td>"
-        table += "<td>" + tableArray.t[i] + "</td><td>" + tableArray.t_prime[i] + "</td>"
-        table += "<td>" + tableArray.q[i] + "</td></tr>"
+    for (let i = 0; i < tableArray.length; i++) {
+        table += "<tr><td>" + tableArray[i].d + "</td><td>" + tableArray[i].d_prime + "</td>"
+        table += "<td>" + tableArray[i].s + "</td><td>" + tableArray[i].s_prime + "</td>"
+        table += "<td>" + tableArray[i].t + "</td><td>" + tableArray[i].t_prime + "</td>"
+        table += "<td>" + tableArray[i].q + "</td></tr>"
     }
 
     return table
