@@ -56,6 +56,6 @@ function calculateTable(m, n) {
 }
 
 function addCurrentRowToArray(tableArray, d, d_prime, s, s_prime, t, t_prime, q) {
-    let currentRow = new TableRow(d, d_prime, s, s_prime, t, t_prime, q)
+    const currentRow = new TableRow(d, d_prime, s, s_prime, t, t_prime, q)
     tableArray.push(currentRow)
 }

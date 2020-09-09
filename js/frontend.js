@@ -1,13 +1,13 @@
 function buttonClick() {
     document.getElementById("table").innerHTML = ""
-    let m = document.getElementById("number-1").value
-    let n = document.getElementById("number-2").value
+    const m = document.getElementById("number-1").value
+    const n = document.getElementById("number-2").value
 
-    let inputIsCorrect = validateUserInput(m, n)
+    const inputIsCorrect = validateUserInput(m, n)
     if (!inputIsCorrect)
         return
 
-    let resultArray = getGCDTable(m, n)
+    const resultArray = getGCDTable(m, n)
     const final_s = resultArray[resultArray.length - 1].s
     const final_t = resultArray[resultArray.length - 1].t
     const final_d = resultArray[resultArray.length - 1].d
