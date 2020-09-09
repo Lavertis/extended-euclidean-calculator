@@ -4,18 +4,6 @@ function getGCDTable(m, n) {
     return calculateTable(mToInt, nToInt)
 }
 
-class TableRow {
-    constructor(d, d_prime, s, s_prime, t, t_prime, q) {
-        this.d = d
-        this.d_prime = d_prime
-        this.s = s
-        this.s_prime = s_prime
-        this.t = t
-        this.t_prime = t_prime
-        this.q = q
-    }
-}
-
 function calculateTable(m, n) {
     let tableArray = []
 
@@ -53,6 +41,18 @@ function calculateTable(m, n) {
     addCurrentRowToArray(tableArray, d, d_prime, s, s_prime, t, t_prime, null)
 
     return tableArray
+}
+
+class TableRow {
+    constructor(d, d_prime, s, s_prime, t, t_prime, q) {
+        this.d = d
+        this.d_prime = d_prime
+        this.s = s
+        this.s_prime = s_prime
+        this.t = t
+        this.t_prime = t_prime
+        this.q = q
+    }
 }
 
 function addCurrentRowToArray(tableArray, d, d_prime, s, s_prime, t, t_prime, q) {
