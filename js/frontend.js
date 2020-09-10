@@ -72,9 +72,9 @@ function fillTable(tableArray) {
 }
 
 function openTable() {
-    return "<table><tr><th><span class='bold'>d</span></th><th><span class='bold'>d'</span></th><th>" +
-        "<span class='bold'>s</span></th><th><span class='bold'>s'</span>" + "</th><th><span class='bold'>t</span>" +
-        "</th><th><span class='bold'>t'</span></th><th><span class='bold'>q</span></th></tr>"
+    return "<table><tr><th><strong>d</strong></th><th><strong>d'</strong></th><th>" +
+        "<strong>s</strong></th><th><strong>s'</strong>" + "</th><th><strong>t</strong>" +
+        "</th><th><strong>t'</strong></th><th><strong>q</strong></th></tr>"
 }
 
 function closeTable(d, s, t) {
