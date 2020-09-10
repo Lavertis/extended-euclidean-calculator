@@ -3,15 +3,19 @@
  */
 function buttonClick() {
     document.getElementById("table").innerHTML = ""
-    const m = parseInt(document.getElementById("number-1").value, 10)
-    const n = parseInt(document.getElementById("number-2").value, 10)
+    const m = document.getElementById("number-1").value
+    const n = document.getElementById("number-2").value
 
     const inputValidator = new InputValidator(m, n)
 
-    if (!inputValidator.valid)
+    if (inputValidator.valid) {
+        const mToInt = parseInt(m, 10)
+        const nToInt = parseInt(n, 10)
+        showResultOnPage(mToInt, nToInt)
+
+    } else
         showErrorMessage(inputValidator.errorMsg)
-    else
-        showResultOnPage(m, n)
+
 }
 
 /**
@@ -19,8 +23,8 @@ function buttonClick() {
  * @class
  */
 class InputValidator {
-    #m = 0
-    #n = 0
+    #m = '0'
+    #n = '0'
 
     constructor(m, n) {
         this.#m = m
@@ -30,9 +34,15 @@ class InputValidator {
         this.#validate()
     }
 
+    // Check if both inputs are Integers
+    #isInteger() {
+        const reg = /^[-]?\d+$/;
+        return reg.test(this.#m) && reg.test(this.#n)
+    }
+
     // By default the input is invalid, which can be only changed at the moment of object creation by this function
     #validate() {
-        if (!(Number.isInteger(this.#m) && Number.isInteger(this.#n))) // Check if both numbers are integers
+        if (!this.#isInteger()) // Check if both inputs are Integers
             this.errorMsg = "Incorrect data"
         else if (this.#m < 1 || this.#n < 1) // Check if numbers are greater than 0
             this.errorMsg = "Numbers must be greater than 0"
