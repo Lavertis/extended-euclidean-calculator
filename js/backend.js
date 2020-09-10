@@ -30,7 +30,7 @@ function calculateTable(m, n) {
 
         q = Math.floor(d / d_prime)
     }
-    addCurrentRowToArray(tableArray, d, d_prime, s, s_prime, t, t_prime, null)
+    addCurrentRowToArray(tableArray, d, d_prime, s, s_prime, t, t_prime, q)
 
     return tableArray
 }
