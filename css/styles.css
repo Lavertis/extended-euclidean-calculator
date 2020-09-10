@@ -66,6 +66,18 @@ tr, td {
     height: 50px;
 }
 
+tr:nth-child(odd) td {
+    background-color: #bcdfff;
+}
+
+tbody tr:last-of-type td:first-of-type {
+    border-radius: 0 0 0 10px;
+}
+
+tbody tr:last-of-type td:last-of-type {
+    border-radius: 0 0 10px 0;
+}
+
 th {
     color: white;
     font-size: 26px;
@@ -78,14 +90,6 @@ th:first-of-type {
 
 th:last-of-type {
     border-radius: 0 10px 0 0;
-}
-
-tbody tr:last-of-type td:first-of-type {
-    border-radius: 0 0 0 10px;
-}
-
-tbody tr:last-of-type td:last-of-type {
-    border-radius: 0 0 10px 0;
 }
 
 .btn {
