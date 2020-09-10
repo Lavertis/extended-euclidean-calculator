@@ -34,7 +34,7 @@ class InputValidator {
 }
 
 function showErrorMessage(msg) {
-    document.getElementById("result-gcd").innerText = msg
+    document.getElementById("equation").innerText = msg
 }
 
 function showResultOnPage(m, n) {
@@ -48,7 +48,7 @@ function showResultOnPage(m, n) {
 }
 
 function displayEquation(m, n, s, t, d) {
-    document.getElementById("result-gcd").innerHTML =
+    document.getElementById("equation").innerHTML =
         "GCD(" + m + ", " + n + ") = " + m + " × <strong>" + s + "</strong> + " + n + " × <strong>" + t + "</strong> = " + d
 }
 
