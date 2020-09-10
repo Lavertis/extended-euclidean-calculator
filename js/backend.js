@@ -6,35 +6,29 @@ function getGCDTable(m, n) {
 
 function calculateTable(m, n) {
     let tableArray = []
-
+    let temp
     let d = m
     let d_prime = n
-    let d_prime_temp
-
     let s = 1
     let s_prime = 0
-    let s_prime_temp
-
     let t = 0
     let t_prime = 1
-    let t_prime_temp
-
     let q = Math.floor(d / d_prime)
 
     while (d_prime !== 0) {
         addCurrentRowToArray(tableArray, d, d_prime, s, s_prime, t, t_prime, q)
 
-        d_prime_temp = d_prime
+        temp = d_prime
         d_prime = d - q * d_prime
-        d = d_prime_temp
+        d = temp
 
-        s_prime_temp = s_prime
+        temp = s_prime
         s_prime = s - s_prime * q
-        s = s_prime_temp
+        s = temp
 
-        t_prime_temp = t_prime
+        temp = t_prime
         t_prime = t - t_prime * q
-        t = t_prime_temp
+        t = temp
 
         q = Math.floor(d / d_prime)
     }
