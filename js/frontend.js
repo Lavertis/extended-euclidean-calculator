@@ -31,7 +31,6 @@ class InputValidator {
         else
             this.valid = true
     }
-
 }
 
 function showErrorMessage(msg) {
