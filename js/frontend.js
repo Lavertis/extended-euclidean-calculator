@@ -7,13 +7,7 @@ function buttonClick() {
     if (!inputIsCorrect)
         return
 
-    const resultArray = getGCDTable(m, n)
-    const final_s = resultArray[resultArray.length - 1].s
-    const final_t = resultArray[resultArray.length - 1].t
-    const final_d = resultArray[resultArray.length - 1].d
-
-    displayTable(resultArray, final_d, final_s, final_t)
-    displayEquation(m, n, final_s, final_t, final_d)
+    showResultOnPage(m, n)
 }
 
 function validateUserInput(m, n) {
@@ -31,6 +25,16 @@ function validateUserInput(m, n) {
 
 function showErrorMessage(msg) {
     document.getElementById("result-gcd").innerText = msg
+}
+
+function showResultOnPage(m, n) {
+    const resultArray = getGCDTable(m, n)
+    const final_s = resultArray[resultArray.length - 1].s
+    const final_t = resultArray[resultArray.length - 1].t
+    const final_d = resultArray[resultArray.length - 1].d
+
+    displayEquation(m, n, final_s, final_t, final_d)
+    displayTable(resultArray, final_d, final_s, final_t)
 }
 
 function displayEquation(m, n, s, t, d) {
