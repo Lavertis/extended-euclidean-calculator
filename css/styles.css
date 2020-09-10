@@ -36,7 +36,7 @@ input {
 
     border-width: 0;
     outline: none;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .7);
 }
 
@@ -50,7 +50,7 @@ input:focus {
 
 table {
     border-collapse: collapse;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     font-size: 30px;
     margin-left: auto;
@@ -73,19 +73,19 @@ th {
 }
 
 th:first-of-type {
-    border-radius: 5px 0 0 0;
+    border-radius: 10px 0 0 0;
 }
 
 th:last-of-type {
-    border-radius: 0 5px 0 0;
+    border-radius: 0 10px 0 0;
 }
 
 tbody tr:last-of-type td:first-of-type {
-    border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 10px;
 }
 
 tbody tr:last-of-type td:last-of-type {
-    border-radius: 0 0 5px 0;
+    border-radius: 0 0 10px 0;
 }
 
 .btn {
