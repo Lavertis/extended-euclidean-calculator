@@ -1,0 +1,26 @@
+input {
+    font-size: 30px;
+    width: auto;
+    text-align: center;
+    color: #34495e;
+    background-color: #d0e7f8;
+
+    display: block;
+    margin: 2% auto;
+    padding: 10px;
+
+    overflow: hidden;
+
+    border-width: 0;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .7);
+}
+
+input:hover {
+    background-color: #c4e4ff;
+}
+
+input:focus {
+    background-color: #a7dcff;
+}
