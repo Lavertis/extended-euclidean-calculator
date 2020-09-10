@@ -1,7 +1,5 @@
 function getGCDTable(m, n) {
-    const mToInt = parseInt(m, 10)
-    const nToInt = parseInt(n, 10)
-    return calculateTable(mToInt, nToInt)
+    return calculateTable(m, n)
 }
 
 function calculateTable(m, n) {

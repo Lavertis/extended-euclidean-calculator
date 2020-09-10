@@ -1,26 +1,37 @@
 function buttonClick() {
     document.getElementById("table").innerHTML = ""
-    const m = document.getElementById("number-1").value
-    const n = document.getElementById("number-2").value
+    const m = parseInt(document.getElementById("number-1").value, 10)
+    const n = parseInt(document.getElementById("number-2").value, 10)
 
-    const inputIsCorrect = validateUserInput(m, n)
-    if (!inputIsCorrect)
-        return
+    const inputValidator = new InputValidator(m, n)
 
-    showResultOnPage(m, n)
+    if (!inputValidator.valid)
+        showErrorMessage(inputValidator.errorMsg)
+    else
+        showResultOnPage(m, n)
 }
 
-function validateUserInput(m, n) {
-    const reg = /^[-]?\d+$/;
+class InputValidator {
+    #m = 0
+    #n = 0
 
-    if (!(reg.test(m) && reg.test(n))) {
-        showErrorMessage("Incorrect data")
-        return false
-    } else if (m < 1 || n < 1) {
-        showErrorMessage("Numbers must be greater than 0")
-        return false
-    } else
-        return true
+    constructor(m, n) {
+        this.#m = m
+        this.#n = n
+        this.valid = false
+        this.errorMsg = ""
+        this.#validate()
+    }
+
+    #validate() {
+        if (!(Number.isInteger(this.#m) && Number.isInteger(this.#n)))
+            this.errorMsg = "Incorrect data"
+        else if (this.#m < 1 || this.#n < 1)
+            this.errorMsg = "Numbers must be greater than 0"
+        else
+            this.valid = true
+    }
+
 }
 
 function showErrorMessage(msg) {
