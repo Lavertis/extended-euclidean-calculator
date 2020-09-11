@@ -4,13 +4,10 @@ input {
     text-align: center;
     color: #34495e;
     background-color: #d0e7f8;
-
     display: block;
-    margin: 2% auto;
-    padding: 10px;
-
+    margin: 0.4rem auto;
+    padding: 0.6rem;
     overflow: hidden;
-
     border-width: 0;
     outline: none;
     border-radius: 5px;

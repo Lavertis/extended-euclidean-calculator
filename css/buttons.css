@@ -11,12 +11,12 @@
     outline: none;
     margin-top: 1rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .btn.blue {
     color: white;
     font-size: 30px;
-    text-align: center;
     background-color: #007dff;
 }
 
