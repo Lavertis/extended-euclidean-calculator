@@ -1,5 +1,5 @@
 /**
- * Sends a request for GCD calculation after checking for valid input.
+ * Calls the functions to calculate and show the result on page after checking for valid input.
  */
 function buttonClick() {
     document.getElementById("table").innerHTML = ""
@@ -22,8 +22,8 @@ function buttonClick() {
  * @class
  */
 class InputValidator {
-    #num1 = '0'
-    #num2 = '0'
+    #num1 = ''
+    #num2 = ''
 
     constructor(num1, num2) {
         this.#num1 = num1
@@ -39,7 +39,10 @@ class InputValidator {
         return reg.test(this.#num1) && reg.test(this.#num2)
     }
 
-    // By default the input is invalid, which can be only changed at the moment of object creation by this function
+    /*
+    * By default the input is invalid
+    * which can only be changed at the moment of object creation by this method.
+    */
     #validate() {
         if (!this.#isInteger()) // Check if both inputs are Integers
             this.errorMsg = "Incorrect data"
